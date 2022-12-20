@@ -54,3 +54,14 @@
   text-align: center;
   border-radius: 4px;
 }
+
+.bookmarks-display {
+  border-radius: 4px;
+  padding: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.1);
+  display: flex;
+}
+
+#bookmarks-details {
+  margin-left: 16px;
+}

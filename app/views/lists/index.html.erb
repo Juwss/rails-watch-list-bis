@@ -1,7 +1,10 @@
 <div class="navbar">
-  <div class="button-log"><%= link_to "S'identifier", new_user_session_path %></div>
-  <div class="button-log"><%= link_to "S'inscrire", new_user_registration_path %></div>
-  <div class="button-log"><%= link_to "Se déconnecter", destroy_user_session_path, data: {turbo_method: :delete} %></div>
+  <div id="nom-principal">Filmorama</div>
+  <div class="button-log">
+    <%= link_to "S'identifier", new_user_session_path %>
+    <%= link_to "S'inscrire", new_user_registration_path %>
+    <%= link_to "Se déconnecter", destroy_user_session_path, data: {turbo_method: :delete} %>
+  </div>
 </div>
 
 <div class="main-container">

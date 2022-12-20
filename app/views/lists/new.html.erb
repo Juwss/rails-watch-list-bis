@@ -1,12 +1,13 @@
-<div>
+<div class="main-container">
   <h1>Créer un nouvelle liste</h1>
 
   <%= simple_form_for(@list) do |f| %>
-    <%= f.input :name %>
-    <%= f.submit %>
+    <%= f.input :name, label: 'Nom de la liste' %>
+    <%= f.submit "Enregistrer", class: "btn btn-dark" %>
+  <% end %>
+
+  <br>
+  <%= link_to lists_path do %>
+      <div class="button-nav">Retour aux listes de films</div>
   <% end %>
 </div>
-
-<%= link_to lists_path do %>
-    <div class="button-nav">Retour aux listes de films</div>
-<% end %>

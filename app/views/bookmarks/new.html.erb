@@ -1,8 +1,13 @@
-<h1>Nouveau bookmark pour <%= @list.name %></h1>
-<%= simple_form_for [@list, @bookmark] do |f| %>
-  <%= f.input :movie_id, collection: @movies %>
-  <%= f.input :comment %>
-  <%= f.submit "Enregistrer", class: "btn btn-primary" %>
-<% end %>
-
-<div class="button-nav"><%= link_to "Retour aux listes de films", lists_path %></div>
+<div class="main-container">
+  <h1>Nouveau bookmark pour <em><%= @list.name %></em></h1>
+  <br>
+  <%= simple_form_for [@list, @bookmark] do |f| %>
+    <%= f.input :movie_id, label: 'Choix du film', collection: @movies %>
+    <%# ou : f.association :movie, prompt: "Select a movie" %>
+    <%# dans ce cas pas besoin du Movie.all dans bookmarks_controller %>
+    <%= f.input :comment, label: 'Commentaire' %>
+    <%= f.submit "Enregistrer", class: "btn btn-dark" %>
+  <% end %>
+  <br>
+  <div class="button-nav"><%= link_to "Retour aux listes de films", lists_path %></div>
+</div>
