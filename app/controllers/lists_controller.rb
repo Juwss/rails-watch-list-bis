@@ -18,7 +18,6 @@ class ListsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
-    console
   end
 
   # En tant qu’utilisateur, je peux voir les détails d’une liste de films.
