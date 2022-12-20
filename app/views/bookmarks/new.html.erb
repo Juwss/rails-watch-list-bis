@@ -1,0 +1,8 @@
+<h1>Nouveau bookmark pour <%= @list.name %></h1>
+<%= simple_form_for [@list, @bookmark] do |f| %>
+  <%= f.input :movie_id, collection: @movies %>
+  <%= f.input :comment %>
+  <%= f.submit "Enregistrer", class: "btn btn-primary" %>
+<% end %>
+
+<div class="button-nav"><%= link_to "Retour aux listes de films", lists_path %></div>

@@ -1,0 +1,30 @@
+<div class="navbar">
+  <div class="button-nav"><%= link_to "S'identifier", new_user_session_path %></div>
+  <div class="button-nav"><%= link_to "S'inscrire", new_user_registration_path %></div>
+  <div class="button-nav"><%= link_to "Se déconnecter", destroy_user_session_path, data: {turbo_method: :delete} %></div>
+</div>
+
+<div class="main-container">
+
+  <h1>Toutes les listes</h1>
+  <div class="secondary-container">
+    <% @lists.each do |list| %>
+      <%= link_to list_path(list) do %>
+        <div id="list-container"><h2><%= list.name %></h2></div>
+      <% end %>
+    <% end %>
+  </div>
+
+  <%= link_to new_list_path do %>
+    <div class="button-nav">+ Créer une nouvelle liste</div>
+  <% end %>
+  <br>
+  <h1>Tous les films</h1>
+  <div class="secondary-container">
+
+    <% @movies.each do |movie| %>
+      <div id="movie-container"><h2><%= movie.title %></h2><br><p><%= movie.overview %></p></div>
+    <% end %>
+  </div>
+
+</div>
