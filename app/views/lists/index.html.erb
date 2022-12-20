@@ -1,7 +1,7 @@
 <div class="navbar">
-  <div class="button-nav"><%= link_to "S'identifier", new_user_session_path %></div>
-  <div class="button-nav"><%= link_to "S'inscrire", new_user_registration_path %></div>
-  <div class="button-nav"><%= link_to "Se déconnecter", destroy_user_session_path, data: {turbo_method: :delete} %></div>
+  <div class="button-log"><%= link_to "S'identifier", new_user_session_path %></div>
+  <div class="button-log"><%= link_to "S'inscrire", new_user_registration_path %></div>
+  <div class="button-log"><%= link_to "Se déconnecter", destroy_user_session_path, data: {turbo_method: :delete} %></div>
 </div>
 
 <div class="main-container">
@@ -23,7 +23,11 @@
   <div class="secondary-container">
 
     <% @movies.each do |movie| %>
-      <div id="movie-container"><h2><%= movie.title %></h2><br><p><%= movie.overview %></p></div>
+      <div id="movie-container">
+        <div><%= image_tag movie.poster_url, alt: "Poster", width: 200 %></div>
+        <br>
+        <h2><%= movie.title %></h2><br><p><%= movie.overview %></p>
+      </div>
     <% end %>
   </div>
 

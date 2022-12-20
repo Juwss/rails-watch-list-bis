@@ -1,21 +1,24 @@
-<h1>Détails</h1>
-<h1>Les films de ma liste <%= @list.name %></h1>
-<ul>
-  <% @list.movies.each do |movie| %>
-    <li><%= movie.title %></li>
-    <% bookmark = Bookmark.find_by(list: @list, movie: movie) %>
-    <%= bookmark.comment %>
-    <%= link_to "Supprimer ce bookmark",
-    bookmark_path(bookmark),
-    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-    %>
-  <% end %>
-</ul>
 
-<%= link_to new_list_bookmark_path(@list) do %>
-    <div class="button-nav">Nouveau bookmark</div>
-<% end %>
-<br>
-<%= link_to lists_path do %>
-    <div class="button-nav">Retour aux listes de films</div>
-<% end %>
+<div class="main-container">
+  <h1>Détails</h1>
+  <h2>Les films de ma liste <em><%= @list.name %></em></h2>
+  <% @list.movies.each do |movie| %>
+  <h3><%= movie.title %></h3>
+    <% bookmark = Bookmark.find_by(list: @list, movie: movie) %>
+    <div class="list-container">
+      <p><%= bookmark.comment %></p>
+      <%= link_to "Supprimer ce bookmark",
+        bookmark_path(bookmark),
+        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+      %>
+    </div>
+  <% end %>
+
+  <%= link_to new_list_bookmark_path(@list) do %>
+      <div class="button-nav">Nouveau bookmark</div>
+  <% end %>
+  <br>
+  <%= link_to lists_path do %>
+      <div class="button-nav">Retour aux listes de films</div>
+  <% end %>
+</div>

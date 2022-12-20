@@ -9,10 +9,37 @@
   font-weight: 500;
   font-size: 20px;
   letter-spacing: 1px;
+  transition: background-color 0.8s;
+}
+
+.button-nav > a {
+  transition: background-color 0.8s;
 }
 
 .button-nav:hover {
   background-image: url("https://images.pexels.com/photos/802055/pexels-photo-802055.jpeg?auto=compress&cs=tinysrgb&w=600");
   background-position: center;
   color: rgb(53, 59, 89);
+}
+
+.button-log {
+  margin-block: 4px;
+  border-radius: 4px;
+  padding-inline: 4px;
+  text-align: center;
+  padding-block: 2px;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+.button-log > a {
+  color: rgb(244,237,237);
+  transition: color 0.8s;
+}
+
+.button-log > a:hover {
+  color: rgb(54,130,127);
+  font-weight: 700;
 }
