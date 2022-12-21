@@ -1,3 +1,18 @@
+<div class="navbar-petite">
+  <div id="nom-principal">Filmorama</div>
+  <div class="button-log">
+    <% if user_signed_in? %>
+      <div class="petit-texte"><em>Connecté(e) en tant que <%= current_user.email %></em></div>
+      <% else %>
+      <div class="petit-texte"><em>Connectez-vous pour accéder</em></div>
+    <% end %>
+    <%= link_to "S'identifier", new_user_session_path %>
+    <%= link_to "S'inscrire", new_user_registration_path %>
+    <% if user_signed_in? %>
+      <%= link_to "Se déconnecter", destroy_user_session_path, data: {turbo_method: :delete} %>
+    <% end %>
+  </div>
+</div>
 
 <div class="main-container">
   <h1>Détails</h1>

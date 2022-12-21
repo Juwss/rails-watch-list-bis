@@ -9,3 +9,13 @@
   align-items: end;
   justify-content: space-between;
 }
+
+.navbar-petite {
+  padding-inline: 16px;
+  height: 200px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: center;
+  background-image: url("https://images.pexels.com/photos/7991579/pexels-photo-7991579.jpeg?auto=compress&cs=tinysrgb&w=600");
+  // flex-direction: column;
+}
